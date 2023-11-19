@@ -45,11 +45,11 @@ export default class Baseball {
   }
 
   compareNumbers() {
-    const result = { ball: 0, strike: 0, nothing: 0 };
+    const result = { ball: 0, strike: 0 };
     const ball = this.#checkBall();
     const strike = this.#checkStrike();
-    if (strike || ball) return { ...result, ball: ball - strike, strike };
-    return { ...result, nothing: 1 };
+    if (strike || ball) return { ball: ball - strike, strike };
+    return result;
   }
 
   #checkBall() {
