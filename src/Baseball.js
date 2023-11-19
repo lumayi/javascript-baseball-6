@@ -13,9 +13,10 @@ export default class Baseball {
 
   #validate(user) {
     this.#isThreeDigits(user);
-    user.forEach((num) => {
+    user.forEach((num, index) => {
       this.#isInteger(num);
       this.#isWithinRange(num);
+      this.#isDifferent(user, num, index);
     });
   }
 
@@ -34,6 +35,12 @@ export default class Baseball {
   #isWithinRange(num) {
     if (num < BASEBALL_RULES.MIN_NUM || num > BASEBALL_RULES.MAX_NUM) {
       throw new Error(ERROR_MSG.WITHIN_RANGE);
+    }
+  }
+
+  #isDifferent(user, num, index) {
+    if (user.indexOf(num) !== index) {
+      throw new Error(ERROR_MSG.DIFFERENT_DIGITS_ONLY);
     }
   }
 

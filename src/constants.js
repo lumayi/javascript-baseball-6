@@ -6,4 +6,5 @@ export const BASEBALL_RULES = {
 export const ERROR_MSG = {
   THREE_DIGITS_ONLY: '[ERROR] 3자리 정수만 입력 가능합니다.',
   WITHIN_RANGE: '[ERROR] 범위 내의 숫자만 입력 가능합니다.',
+  DIFFERENT_DIGITS_ONLY: '[ERROR] 각 자리의 숫자는 모두 달라야합니다.',
 };
