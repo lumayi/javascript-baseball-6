@@ -1,14 +1,12 @@
-import { BASEBALL_RULES, ERROR_MSG } from './constants';
+import { BASEBALL_RULES, ERROR_MSG } from './constants.js';
+import InputView from './view/InputView.js';
+import OutputView from './view/OutputView.js';
 
 export default class Baseball {
   #computer;
 
-  #user;
-
-  constructor(computer, user) {
-    this.#validate(user);
+  constructor(computer) {
     this.#computer = computer;
-    this.#user = user;
   }
 
   #validate(user) {
@@ -44,26 +42,37 @@ export default class Baseball {
     }
   }
 
-  compareNumbers() {
+  async playBall() {
+    let endGame = false;
+    while (!endGame) {
+      const user = await InputView.getUserNumbers();
+      this.#validate(user);
+      const result = this.#compareNumbers(user);
+      if (result.strike === 3) endGame = true;
+      OutputView.printResult(result);
+    }
+  }
+
+  #compareNumbers(user) {
     const result = { ball: 0, strike: 0 };
-    const ball = this.#checkBall();
-    const strike = this.#checkStrike();
+    const ball = this.#checkBall(user);
+    const strike = this.#checkStrike(user);
     if (strike || ball) return { ball: ball - strike, strike };
     return result;
   }
 
-  #checkBall() {
+  #checkBall(user) {
     let ball = 0;
     this.#computer.forEach((v) => {
-      if (this.#user.includes(v)) ball += 1;
+      if (user.includes(v)) ball += 1;
     });
     return ball;
   }
 
-  #checkStrike() {
+  #checkStrike(user) {
     let strike = 0;
     this.#computer.forEach((v, i) => {
-      if (v === this.#user[i]) strike += 1;
+      if (v === user[i]) strike += 1;
     });
     return strike;
   }
