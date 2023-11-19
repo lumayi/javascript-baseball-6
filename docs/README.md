@@ -4,9 +4,8 @@
 
 - [ ] 컴퓨터 랜덤 3자리 숫자를 정한다. #Computer-getComputerNumbers()
 - [ ] 사용자로부터 3자리 숫자를 받아온다. #Input-getUserNumbers()
-  - [ ] 3자리의 정수가 아닐 경우, 예외를 발생한다. #Input-validate(), isThreeDigits(), isInteger()
-  - [ ] 1-9 정수가 아닐 경우, 예외를 발생한다. #Input-validate(), isWithinRange()
-  - [ ] 올바른 형식이 아닐 경우, 예외를 발생한다. #Input-validate(), isValidFormat()
+  - [x] 3자리의 정수가 아닐 경우, 예외를 발생한다.
+  - [x] 1-9 정수가 아닐 경우, 예외를 발생한다.
 - [x] 컴퓨터 수와 사용자 수를 비교한다.
   - [x] 같은 수가 같은 자리에 있으면 스트라이크를 증가한다.
   - [x] 같은 수가 다른 자리에 있으면 볼을 증가한다.
