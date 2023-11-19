@@ -8,9 +8,7 @@ export default class Baseball {
     this.#user = user;
   }
 
-  compareNumbers() {
-    const ball = this.#checkBall();
-  }
+  compareNumbers() {}
 
   #checkBall() {
     let ball = 0;
@@ -18,5 +16,13 @@ export default class Baseball {
       if (this.#computer.includes(v)) ball += 1;
     });
     return ball;
+  }
+
+  #checkStrike() {
+    let strike;
+    this.#computer.forEach((v, i) => {
+      if (v === this.#user[i]) strike += 1;
+    });
+    return strike;
   }
 }

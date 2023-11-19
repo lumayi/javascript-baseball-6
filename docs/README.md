@@ -8,7 +8,7 @@
   - [ ] 1-9 정수가 아닐 경우, 예외를 발생한다. #Input-validate(), isWithinRange()
   - [ ] 올바른 형식이 아닐 경우, 예외를 발생한다. #Input-validate(), isValidFormat()
 - [ ] 컴퓨터 수와 사용자 수를 비교한다. #Baseball-compareNumbers()
-  - [ ] 같은 수가 같은 자리에 있으면 스트라이크를 증가한다.
+  - [x] 같은 수가 같은 자리에 있으면 스트라이크를 증가한다.
   - [x] 같은 수가 다른 자리에 있으면 볼을 증가한다.
   - [ ] 같은 수가 없으면 낫싱을 리턴한다.
 - [ ] 비교 결과를 출력한다. #Output-printResult()
