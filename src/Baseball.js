@@ -19,13 +19,13 @@ export default class Baseball {
   #checkBall() {
     let ball = 0;
     this.#computer.forEach((v) => {
-      if (this.#computer.includes(v)) ball += 1;
+      if (this.#user.includes(v)) ball += 1;
     });
     return ball;
   }
 
   #checkStrike() {
-    let strike;
+    let strike = 0;
     this.#computer.forEach((v, i) => {
       if (v === this.#user[i]) strike += 1;
     });
