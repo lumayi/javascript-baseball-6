@@ -1,0 +1,17 @@
+# 미션 - 숫자 야구⚾️
+
+## 숫자에 대한 결과(스트라이크,볼,낫싱)을 출력한다.
+
+- [ ] 컴퓨터 랜덤 3자리 숫자를 정한다. #Computer-getComputerNumbers()
+- [ ] 사용자로부터 3자리 숫자를 받아온다. #Input-getUserNumbers()
+  - [ ] 3자리의 정수가 아닐 경우, 예외를 발생한다. #Input-validate(), isThreeDigits(), isInteger()
+  - [ ] 1-9 정수가 아닐 경우, 예외를 발생한다. #Input-validate(), isWithinRange()
+  - [ ] 올바른 형식이 아닐 경우, 예외를 발생한다. #Input-validate(), isValidFormat()
+- [ ] 컴퓨터 수와 사용자 수를 비교한다. #Baseball-compareNumbers()
+  - [ ] 같은 수가 같은 자리에 있으면 스트라이크를 증가한다.
+  - [ ] 같은 수가 다른 자리에 있으면 볼을 증가한다.
+  - [ ] 같은 수가 없으면 낫싱을 리턴한다.
+- [ ] 비교 결과를 출력한다. #Output-printResult()
+- [ ] 맞힐 때까지 숫자를 받고 비교하는 과정을 반복한다. #Baseball-playBall()
+- [ ] 컴퓨터 수를 맞힐 경우, 게임을 종료한다.
+- [ ] 게임 종료시, 다시 시작 혹은 완전한 종료를 택할 수 있다. #Baseball-restartGame()
