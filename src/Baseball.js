@@ -8,7 +8,13 @@ export default class Baseball {
     this.#user = user;
   }
 
-  compareNumbers() {}
+  compareNumbers() {
+    const result = { ball: 0, strike: 0, nothing: 0 };
+    const ball = this.#checkBall();
+    const strike = this.#checkStrike();
+    if (strike || ball) return { ...result, ball: ball - strike, strike };
+    return { ...result, nothing: 1 };
+  }
 
   #checkBall() {
     let ball = 0;
