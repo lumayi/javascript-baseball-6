@@ -54,3 +54,47 @@ describe('기능 테스트', () => {
     expect(result).toEqual(expected);
   });
 });
+
+describe('예외 테스트', () => {
+  test.each([[['l', 'o', 'o']], [[1, 2, ' ']]])(
+    '정수가 아닐 경우, 예외 발생',
+    (num) => {
+      const computer = [1, 2, 3];
+      const user = num;
+
+      expect(() => {
+        new Baseball(computer, user);
+      }).toThrow('[ERROR] 3자리 정수만 입력 가능합니다.');
+    },
+  );
+
+  test.each([[[1, 2, 3, 4]], [[1, 2]]])(
+    '3자리 수가 아닐 경우, 예외 발생',
+    (num) => {
+      const computer = [1, 2, 3];
+      const user = num;
+
+      expect(() => {
+        new Baseball(computer, user);
+      }).toThrow('[ERROR] 3자리 정수만 입력 가능합니다.');
+    },
+  );
+
+  test('범위 내의 수가 아닐 경우, 예외 발생', () => {
+    const computer = [1, 2, 3];
+    const user = [1, 2, 0];
+
+    expect(() => {
+      new Baseball(computer, user);
+    }).toThrow('[ERROR] 범위 내의 숫자만 입력 가능합니다.');
+  });
+
+  test('각 자리 수가 중복될 경우, 예외 발생', () => {
+    const computer = [1, 2, 3];
+    const user = [1, 2, 2];
+
+    expect(() => {
+      new Baseball(computer, user);
+    }).toThrow('[ERROR] 각 자리의 숫자는 모두 달라야합니다.');
+  });
+});
